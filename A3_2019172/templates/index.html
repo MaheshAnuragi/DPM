@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Stocks Analysis</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="masthead">
+            <div class="masthead-content text-white">
+                <h1 class="fst-italic lh-1 mb-4">Stocks Analysis</h1>
+                
+                <form action="/" method="POST">
+                    
+                    <select class="form-select" name="StockName" id="StockName" aria-label="Default select example">
+                        <option selected>Select the Stocks</option>
+                        {% for i in stocks %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="form-group">
+                      <label for="exampleInputStartDate">Start Date</label>
+                      <input type="StartDate" class="form-control" name="StartDate" id="StartDate" aria-describedby="StartDateHelp" placeholder="Start Date: DD/MM/YYYY">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEndDate">End Date</label>
+                      <input type="EndDate" class="form-control" name="EndDate" id="EndDate" placeholder="End Date: DD/MM/YYYY">
+                    </div>
+                    
+                    <h5> </h5>
+                    <input type="submit" class="btn btn-primary">
+
+                </form>
+
+                <br>
+
+                <p>
+                   Highest = {{ Highest }}
+                   <br>
+                   Lowest =  {{ Lowest }}
+                   <br>
+                   ErrorOccurs = {{ Error }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
