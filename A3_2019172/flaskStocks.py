@@ -1,7 +1,6 @@
 # for runs simply run that file
 # I assumed 52 weeks as general year not as Leap year
 from flask import *
-from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
 import glob
 import os
